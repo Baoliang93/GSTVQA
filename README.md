@@ -11,9 +11,9 @@ Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for
 * Using the files in "./GSTVQA/TCSVT_Release/GVQA_Release/VGG16_mean_std_features/" to genrate the multi-scale VGG feature of each frame of each video.
 
 * Train:
-“python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/main.py --TrainIndex=1”  （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3:LIVE-VQC; 4:KoNviD）
+“python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/main.py --TrainIndex=1”  （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3: LIVE-VQC; 4: KoNviD）
 
 * Test:
-“python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/cross_test.py --TrainIndex=1”  （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3:LIVE-VQC; 4:KoNviD）
+“python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/cross_test.py --TrainIndex=1”  （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3: LIVE-VQC; 4: KoNviD）
 
 * The model trained on each above four dataset have been provided in "./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/models/"
