@@ -8,7 +8,7 @@ Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for
 * Pytorch 1.6.0  Cuda V9.0.176 Cudnn 7.4.1
 
 # Running
-* Download the pre-extracted multi-scale VGG features of each datases from [BaiduYun](https://pan.baidu.com/s/1pyl5Yz4opPdoACnqSWLXsw), Extraction code: 'gstv'. Then put the features in the path: "./GSTVQA/TCSVT_Release/GVQA_Release/VGG16_mean_std_features/".
+* Download the pre-extracted multi-scale VGG features of each datases from [BaiduYun](https://pan.baidu.com/s/1pyl5Yz4opPdoACnqSWLXsw), Extraction code: `gstv`. Then put the features in the path: "./GSTVQA/TCSVT_Release/GVQA_Release/VGG16_mean_std_features/".
 
 * Train:
 “python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/main.py --TrainIndex=1”  （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3: LIVE-VQC; 4: KoNviD）
