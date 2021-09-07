@@ -1,13 +1,3 @@
-"""Quality Assessment of In-the-Wild Videos, ACM MM 2019"""
-#
-# Author: Dingquan Li
-# Email: dingquanli AT pku DOT edu DOT cn
-# Date: 2019/11/8
-#
-# tensorboard --logdir=logs --port=6006
-# CUDA_VISIBLE_DEVICES=1 python Training_VSFA_all_data_300epoch.py --database=KoNViD-1k --exp_id=0
-
-
 from argparse import ArgumentParser
 import os
 import h5py
