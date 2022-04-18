@@ -1,12 +1,3 @@
-"""Quality Assessment of In-the-Wild Videos, ACM MM 2019"""
-#
-# Author: Dingquan Li
-# Email: dingquanli AT pku DOT edu DOT cn
-# Date: 2019/11/8
-#
-# tensorboard --logdir=logs --port=6006
-# CUDA_VISIBLE_DEVICES=1 python Training_VSFA_all_data_300epoch.py --database=KoNViD-1k --exp_id=0
-
 
 from argparse import ArgumentParser
 import os
@@ -143,17 +134,6 @@ def PymidPool(q,layer_num,Att):
 
 
     
-def TP(q, tau=12, beta=0.5):
-    """subjectively-inspired temporal pooling"""
-    q = torch.unsqueeze(torch.t(q), 0)
-    qm = -float('inf')*torch.ones((1, 1, tau-1)).to(q.device)
-    qp = 10000.0 * torch.ones((1, 1, tau - 1)).to(q.device)  #
-    l = -F.max_pool1d(torch.cat((qm, -q), 2), tau, stride=1)
-    m = F.avg_pool1d(torch.cat((q * torch.exp(-q), qp * torch.exp(-qp)), 2), tau, stride=1)
-    n = F.avg_pool1d(torch.cat((torch.exp(-q), torch.exp(-qp)), 2), tau, stride=1)
-    m = m / n
-    return beta * m + (1 - beta) * l
-
 
 class GSTVQA(nn.Module):
     def __init__(self, input_size=1472, reduced_size=256, hidden_size=32,att_frams=15,layer_num = 7):
@@ -252,8 +232,8 @@ if __name__ == "__main__":
     np.random.seed(args.seed)
     random.seed(args.seed)
     torch.utils.backcompat.broadcast_warning.enabled = True
-#    SourceIndex = args.TrainIndex
-    SourceIndex = 1
+    SourceIndex = args.TrainIndex
+  #  SourceIndex = 1
     if SourceIndex ==1:
         args.database = 'cvd14'
         features_dir = "../VGG16_mean_std_features/VGG16_cat_features_CVD2014_original_resolution/"
@@ -324,7 +304,7 @@ if __name__ == "__main__":
         D_gauss_optim = Adam(D_gauss.parameters(), lr=0.0001,betas = (0.9,0.999)) 
         if not os.path.exists('model_with_val'):
             os.makedirs('model_with_val')
-        trained_model_file = 'model_with_val/Intra-60per-data-{}-{}-EXP{}'.format(args.model, args.database, args.exp_id)
+        trained_model_file = 'model_with_val/Intra-80per-data-{}-{}-EXP{}'.format(args.model, args.database, args.exp_id)
           
         criterion = nn.L1Loss()  # L1 loss
         optimizer = Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
