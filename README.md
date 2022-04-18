@@ -18,5 +18,7 @@ Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for
   `python  ./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/cross_test.py --TrainIndex=1  
   （TrainIndex=1：using the CVD2014 datase as source dataset; 2: LIVE-Qua; 3: LIVE-VQC; 4: KoNviD）`  
 
+# Details
 * The model trained on each above four dataset have been provided in "./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/models/"
 * The code for VGG based feature extraction is available at: https://mega.nz/file/LXhnETyD#M6vI5M9QqStFsEXCeiMdJ8BWRrLxvRbkZ1rqQQzoVuc
+* In the intra-dataset setting, it should be noted that we use 80% data for training and the rest 20% data for testing. We haven't used the 20% data for the best epoch selection to avoid testing data leaky, instead, the lase epoch is used for performance validation.
