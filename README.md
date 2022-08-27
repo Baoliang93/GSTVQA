@@ -21,4 +21,4 @@ Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for
 # Details
 * The model trained on each above four dataset have been provided in "./GSTVQA/TCSVT_Release/GVQA_Release/GVQA_Cross/models/"
 * The code for VGG based feature extraction is available at: https://mega.nz/file/LXhnETyD#M6vI5M9QqStFsEXCeiMdJ8BWRrLxvRbkZ1rqQQzoVuc
-* In the intra-dataset setting, it should be noted that we use 80% data for training and the rest 20% data for testing. We haven't used the 20% data for the best epoch selection to avoid testing data leaky, instead, the lase epoch is used for performance validation.
+* In the intra-dataset setting, it should be noted that we use 80% data for training and the rest 20% data for testing. We haven't used the 20% data for the best epoch selection to avoid testing data leaky, instead, the last epoch is used for performance validation.
