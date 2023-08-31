@@ -184,11 +184,12 @@ class GSTVQA(nn.Module):
                Q_eachV = qi
             else:
                Q_eachV = torch.cat((Q_eachV,qi),0)
-            frame_input = outputs[i, :np.int(input_length[i].numpy())].mean(0)-self.q_mean
-            frame_score[i] = (torch.exp(-(self.q_reg**2)*frame_input*frame_input)).mean()            
+            frame_input = outputs[i, :np.int(input_length[i].numpy())].mean(0)
+            frame_input_tp = frame_input-self.q_mean
+            frame_score[i] = (torch.exp(-(self.q_reg**2)*frame_input_tp*frame_input_tp)).mean()            
  
         score = self.q_reg2(Q_eachV)
-        varT = self.q_reg**2
+        varT = 1.0/(self.q_reg**2+1e-9)
         meanT = self.q_mean
 
         return score,frame_score,frame_input,varT,meanT
