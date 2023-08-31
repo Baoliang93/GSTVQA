@@ -190,7 +190,7 @@ class GSTVQA(nn.Module):
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser(description='"VSFA: Quality Assessment of In-the-Wild Videos')
+    parser = ArgumentParser(description='Intra')
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--TrainIndex", type=int, default=1)
     parser.add_argument('--lr', type=float, default=0.0001,
