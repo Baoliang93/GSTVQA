@@ -1,5 +1,5 @@
 # GSTVQA
-Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for No-Reference Video Quality Assessment'. The code is mostly based on [VSFA](https://github.com/lidq92/VSFA).
+Code for 'Learning Generalized Spatial-Temporal Deep Feature  Representation for No-Reference Video Quality Assessment'. The code is partially borrowed from  [VSFA](https://github.com/lidq92/VSFA).
 ![image](https://user-images.githubusercontent.com/75255236/121126057-1fbca280-c85a-11eb-9b6d-2d221a83b263.png)
 
 
